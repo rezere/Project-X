@@ -41,6 +41,7 @@ public class FirstPersonMovement : MonoBehaviour
         {
             pause = false;
             Cursor.lockState = CursorLockMode.Locked;
+            FirstPersonLook.TimerStop();
             //Exit(pause);
         }
         Exit(pause);

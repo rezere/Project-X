@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using System;
+using UnityEngine.UI;
 public class FirstPersonLook : MonoBehaviour
 {
     [SerializeField]
@@ -8,7 +9,8 @@ public class FirstPersonLook : MonoBehaviour
     Vector2 appliedMouseDelta;
     public float sensitivity = 1;
     public float smoothing = 2;
-
+    public Text time_txt;
+    public static DateTime timerEnd;
 
     void Reset()
     {
@@ -18,8 +20,14 @@ public class FirstPersonLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        timerEnd = DateTime.Now.AddSeconds(Game_Manager.time);
+        TimeSpan delta = timerEnd - DateTime.Now;
+        time_txt.text = delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
     }
-
+     public static void  TimerStop()
+    {
+         timerEnd = DateTime.Now.AddSeconds(Game_Manager.time);
+    }
     void Update()
     {
         if (!FirstPersonMovement.pause)
@@ -33,6 +41,10 @@ public class FirstPersonLook : MonoBehaviour
             // Rotate camera and controller.
             transform.localRotation = Quaternion.AngleAxis(-currentMouseLook.y, Vector3.right);
             character.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up);
+
+            //Вывод времени
+            TimeSpan delta = timerEnd - DateTime.Now;
+            time_txt.text = delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
         }
     }
 }

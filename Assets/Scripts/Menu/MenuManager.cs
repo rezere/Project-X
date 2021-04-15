@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     public GameObject music_obj;
     private AudioSource au;
     public AudioClip []mus;
-    public static int volume,volume_mus;
+    public static int volume,volume_mus,chart_pick;
     public static string lang = "RU";
     public Text []volumTxt;
 
@@ -25,6 +25,7 @@ public class MenuManager : MonoBehaviour
             volume = sv.vol;
             volume_mus = sv.vol_mus;
             lang = sv.language;
+            chart_pick = sv.chart;
         }
         scroll[0].value = volume;
         scroll[1].value = volume_mus;
@@ -60,12 +61,13 @@ public class MenuManager : MonoBehaviour
         sv.vol = volume;
         sv.vol_mus = volume_mus;
         sv.language = lang;
+        sv.chart = chart_pick;
         PlayerPrefs.SetString("SV", JsonUtility.ToJson(sv));
     }
 }
 
 public class Save
 {
-    public int vol, vol_mus;
+    public int vol, vol_mus, chart;
     public string language;
 }

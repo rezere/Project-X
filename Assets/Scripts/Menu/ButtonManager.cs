@@ -115,6 +115,7 @@ public class ButtonManager : MonoBehaviour
         audio.volume = MenuManager.volume / 100f;
         audio.PlayOneShot(click);
         FirstPersonMovement.pause = false;
+        FirstPersonLook.TimerStop();
         //Cursor.lockState = CursorLockMode.Locked;
     }
     
@@ -145,6 +146,9 @@ public class ButtonManager : MonoBehaviour
             MenuManager.lang = "RU";
             butt_language.sprite = lan[0];
         }
-       //Debug.Log(MenuManager.lang);
+    }
+    public void Charters_Select(int index)
+    {
+        MenuManager.chart_pick = index;
     }
 }
