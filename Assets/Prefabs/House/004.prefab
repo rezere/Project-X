@@ -88,9 +88,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2154191000119980606}
+  - component: {fileID: 515333841587043742}
+  - component: {fileID: -8811047649720024684}
   m_Layer: 0
   m_Name: 004
-  m_TagString: Untagged
+  m_TagString: light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +113,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &515333841587043742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717399166095066723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48750272, y: 0.08995834, z: 0.4969412}
+  m_Center: {x: -0.0023948401, y: -0.000000063329935, z: 0.0023956299}
+--- !u!114 &-8811047649720024684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717399166095066723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caecc2c5aa23825448f63b421b7bb393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light_home: []
+  active: 0
 --- !u!1 &7805573488443221471
 GameObject:
   m_ObjectHideFlags: 0

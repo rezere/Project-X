@@ -558,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3724850683118473506}
   m_LocalRotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.01853504, y: 0.033525232, z: -0.1000017}
+  m_LocalPosition: {x: -1.03, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5301126298255066513}
@@ -678,6 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5301126298255066513}
+  - component: {fileID: -1159827280856621724}
   m_Layer: 0
   m_Name: Pikachu
   m_TagString: Untagged
@@ -692,7 +693,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4817359446001442603}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
   m_LocalPosition: {x: 3.822, y: -2.7918315, z: -23.371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -700,7 +701,30 @@ Transform:
   - {fileID: 2351512570504072444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 270}
+--- !u!114 &-1159827280856621724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4817359446001442603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c4fc175ab6b9b4692ae03b1b97faf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn:
+  - {x: 8.631, y: 0.519, z: 8.787}
+  - {x: 33.977, y: -0.629, z: 0.945}
+  - {x: 36.339, y: -0.096, z: -5.896}
+  - {x: 36.61, y: 3.769, z: -4.94}
+  - {x: 36.61, y: 3.578, z: -18.65}
+  - {x: 37.833, y: 4.403, z: -18.65}
+  - {x: 12.698, y: -3.469, z: -30.629}
+  - {x: 15.735, y: -3.469, z: -30.629}
+  - {x: 17.85, y: -3.469, z: -30.629}
+  - {x: -1.882, y: -4.557, z: 12.41}
 --- !u!1 &4848142218322126183
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,18 @@ public class FirstPersonLook : MonoBehaviour
     public float smoothing = 2;
     public Text time_txt;
     public static DateTime timerEnd;
+    public float distance = 5;
+    private Camera cam;
+
 
     void Reset()
     {
         character = GetComponentInParent<FirstPersonMovement>().transform;
+    }
+
+    void Awake()
+    {
+        cam = GetComponent<Camera>();
     }
 
     void Start()
@@ -24,10 +32,12 @@ public class FirstPersonLook : MonoBehaviour
         TimeSpan delta = timerEnd - DateTime.Now;
         time_txt.text = delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
     }
-     public static void  TimerStop()
+
+    public static void  TimerStop()
     {
          timerEnd = DateTime.Now.AddSeconds(Game_Manager.time);
     }
+
     void Update()
     {
         if (!FirstPersonMovement.pause)
@@ -45,6 +55,21 @@ public class FirstPersonLook : MonoBehaviour
             //Вывод времени
             TimeSpan delta = timerEnd - DateTime.Now;
             time_txt.text = delta.Minutes.ToString("00") + ":" + delta.Seconds.ToString("00");
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                RaycastHit hit;
+                Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+                if (Physics.Raycast(ray, out hit, distance))
+			{
+				if(hit.collider.tag == "light")
+				{
+                    bool act =  hit.collider.gameObject.GetComponent<Light_House>().active;
+                    hit.collider.gameObject.GetComponent<Light_House>().active = !act;
+                    hit.collider.gameObject.GetComponent<Light_House>().LightOff();
+				}
+			}
+            }
+
         }
     }
 }

@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Game\Game_Manager.cs" />
      <Compile Include="Assets\Scripts\Game\Items.cs" />
      <Compile Include="Assets\Scripts\Game\Items_Spawn.cs" />
+     <Compile Include="Assets\Scripts\Game\Light_House.cs" />
      <Compile Include="Assets\Scripts\Menu\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Menu\Text_Language.cs" />
