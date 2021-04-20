@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject[] sett;
     public GameObject[] button;
     private Image butt_language;
-    private AudioSource audio;
+    private AudioSource au;
     public AudioClip click;
     private RectTransform panl;
     public int speed;
@@ -38,17 +38,17 @@ public class ButtonManager : MonoBehaviour
     // Начало игры
     public void StartGame()
     {
-        audio = button[0].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+        au = button[0].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
         SceneManager.LoadScene(1);
     }
     // Настройки
     public void Settings()
     {
-        audio = button[1].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+        au = button[1].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
         panl = sett[0].GetComponent<RectTransform>();
         panel = true;
     }
@@ -76,9 +76,9 @@ public class ButtonManager : MonoBehaviour
         if(panel)
         {
         MenuManager.Save_Sett();
-        audio = button[3].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+        au = button[3].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
         panl = sett[0].GetComponent<RectTransform>();
         panel = false;
         panl.offsetMin = new Vector2(panl.offsetMin.x, -1200);
@@ -87,9 +87,9 @@ public class ButtonManager : MonoBehaviour
         else if(ch_panel)
         {
             MenuManager.Save_Sett();
-            audio = button[3].GetComponent<AudioSource>();
-            audio.volume = MenuManager.volume/100f;
-            audio.PlayOneShot(click);
+            au = button[3].GetComponent<AudioSource>();
+            au.volume = MenuManager.volume/100f;
+            au.PlayOneShot(click);
             panl = sett[1].GetComponent<RectTransform>();
             ch_panel = false;
             panl.offsetMin = new Vector2(panl.offsetMin.x, 1200);
@@ -100,9 +100,9 @@ public class ButtonManager : MonoBehaviour
     public void Exit()
     {
         MenuManager.Save_Sett();
-        audio = button[2].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+        au = button[2].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -111,9 +111,9 @@ public class ButtonManager : MonoBehaviour
     }
     public void Continue()
     {
-        audio = button[0].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume / 100f;
-        audio.PlayOneShot(click);
+        au = button[0].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume / 100f;
+        au.PlayOneShot(click);
         FirstPersonMovement.pause = false;
         FirstPersonLook.TimerStop();
         //Cursor.lockState = CursorLockMode.Locked;
@@ -122,9 +122,9 @@ public class ButtonManager : MonoBehaviour
 
     public void Charters()
     {
-        audio = button[1].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+        au = button[1].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
         panl = sett[1].GetComponent<RectTransform>();
         ch_panel = true;
     }
@@ -154,9 +154,9 @@ public class ButtonManager : MonoBehaviour
 
     public void BacktoMain()
     {
-         audio = button[2].GetComponent<AudioSource>();
-        audio.volume = MenuManager.volume/100f;
-        audio.PlayOneShot(click);
+         au = button[2].GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(click);
         SceneManager.LoadScene(0);
     }
 }
