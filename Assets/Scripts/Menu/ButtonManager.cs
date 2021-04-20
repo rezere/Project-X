@@ -151,4 +151,12 @@ public class ButtonManager : MonoBehaviour
     {
         MenuManager.chart_pick = index;
     }
+
+    public void BacktoMain()
+    {
+         audio = button[2].GetComponent<AudioSource>();
+        audio.volume = MenuManager.volume/100f;
+        audio.PlayOneShot(click);
+        SceneManager.LoadScene(0);
+    }
 }

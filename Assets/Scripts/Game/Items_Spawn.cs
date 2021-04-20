@@ -10,5 +10,8 @@ public class Items_Spawn : MonoBehaviour
         int s = Random.Range(0,spawn.Length);
         this.gameObject.transform.position = new Vector3(spawn[s].x, spawn[s].y, spawn[s].z); 
     }
-
+    public void DestroyItems()
+    {
+        Destroy(this.gameObject);
+    }
 }

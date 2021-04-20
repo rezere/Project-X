@@ -679,9 +679,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5301126298255066513}
   - component: {fileID: -1159827280856621724}
+  - component: {fileID: 7349273573053532486}
   m_Layer: 0
   m_Name: Pikachu
-  m_TagString: Untagged
+  m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn:
   - {x: 8.631, y: 0.519, z: 8.787}
-  - {x: 33.977, y: -0.629, z: 0.945}
+  - {x: 33.977, y: -0.629, z: 0.54}
   - {x: 36.339, y: -0.096, z: -5.896}
   - {x: 36.61, y: 3.769, z: -4.94}
   - {x: 36.61, y: 3.578, z: -18.65}
@@ -725,6 +726,19 @@ MonoBehaviour:
   - {x: 15.735, y: -3.469, z: -30.629}
   - {x: 17.85, y: -3.469, z: -30.629}
   - {x: -1.882, y: -4.557, z: 12.41}
+--- !u!65 &7349273573053532486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4817359446001442603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6542947, y: 0.38046837, z: 0.38064146}
+  m_Center: {x: -1.5619096, y: 0.06847477, z: 0.30967927}
 --- !u!1 &4848142218322126183
 GameObject:
   m_ObjectHideFlags: 0

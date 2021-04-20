@@ -1934,6 +1934,7 @@ MonoBehaviour:
   sensitivity: 1
   smoothing: 2
   time_txt: {fileID: 7150794465072666236}
+  distance: 10
 --- !u!114 &2782209301179201774
 MonoBehaviour:
   m_ObjectHideFlags: 0

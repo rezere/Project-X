@@ -67,6 +67,12 @@ public class FirstPersonLook : MonoBehaviour
                     hit.collider.gameObject.GetComponent<Light_House>().active = !act;
                     hit.collider.gameObject.GetComponent<Light_House>().LightOff();
 				}
+
+                if(hit.collider.tag == "Items")
+				{
+                    Game_Manager.ItemsUp();
+                     hit.collider.gameObject.GetComponent<Items_Spawn>().DestroyItems();
+				}
 			}
             }
 
