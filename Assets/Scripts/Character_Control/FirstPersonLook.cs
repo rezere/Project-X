@@ -73,6 +73,12 @@ public class FirstPersonLook : MonoBehaviour
                     Game_Manager.ItemsUp();
                      hit.collider.gameObject.GetComponent<Items_Spawn>().DestroyItems();
 				}
+                 if(hit.collider.tag == "Door")
+				{
+                    hit.transform.GetComponent<Door_Open>().enabled = true;
+					hit.transform.GetComponent<Door_Open>().Invert(transform);
+				}
+                
 			}
             }
 
