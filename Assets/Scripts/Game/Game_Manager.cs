@@ -76,8 +76,9 @@ public class Game_Manager : MonoBehaviour
         amount--;
     }
 
-    public void Lose_Game( bool win)
+    public void Lose_Game(bool win)
     {
-        SceneManager.LoadScene(0);
+        End_Game.iswin = win;
+        SceneManager.LoadScene("endGame");
     }
 }

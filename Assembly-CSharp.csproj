@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Character_Control\FirstPersonLook.cs" />
      <Compile Include="Assets\Scripts\Character_Control\FirstPersonMovement.cs" />
      <Compile Include="Assets\Scripts\Game\Door_Open.cs" />
+     <Compile Include="Assets\Scripts\Game\End_Game.cs" />
      <Compile Include="Assets\Scripts\Game\Game_Manager.cs" />
      <Compile Include="Assets\Scripts\Game\Items.cs" />
      <Compile Include="Assets\Scripts\Game\Items_Spawn.cs" />
@@ -628,6 +629,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>W:/gamedev/Project X/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>W:/gamedev/Project X/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
