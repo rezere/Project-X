@@ -9,21 +9,40 @@ public class FirstPersonMovement : MonoBehaviour
     Vector2 velocity;
     public bool kiss = false;
     public static bool pause = false;
+    [Header("Фонарик")]
     public  static float battery;
     public GameObject ligh;
     public Light lantern;
     private bool ligt_on;
     public Image img_battery;
     public Sprite[] battery_pr;
+    
+    [Header("Предметы для поиска")]
+
+    public  Image[] items_search;
+    public Sprite[] items_img;
+    public GameObject menu_items;
+    private bool ismenu;
  
     private void Start()
     {
+        ismenu = false;
         battery = 100f;
         ligt_on = false;
         anim = GetComponent<Animator>();
         anim.SetBool("walk", false);
         lantern.range = 45f;
         lantern.spotAngle = 60f;
+        for(int i = 0; i<Game_Manager.items_spawn.Length;i++)
+        {
+            items_search[i].sprite = items_img[Game_Manager.items_spawn[i]];
+            items_search[i].enabled = true;
+        }
+        for(int i = Game_Manager.items_spawn.Length; i<items_search.Length;i++)
+        {
+            items_search[i].enabled = false;
+        }
+        Debug.Log(Game_Manager.items_spawn.Length);
     }
 
     public void Update()
@@ -55,6 +74,21 @@ public class FirstPersonMovement : MonoBehaviour
         {
             ligh.SetActive(false);
             ligt_on = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.T) && !ismenu) // открытие меню предметов
+        {
+            ismenu = true;
+            anim.SetBool("walk", false);
+            Cursor.lockState = CursorLockMode.Confined;
+            menu_items.SetActive(ismenu);
+        }
+        else if (Input.GetKeyUp(KeyCode.T) && ismenu) // Закрытие меню предметов
+        {
+            ismenu = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            FirstPersonLook.TimerStop();
+            menu_items.SetActive(ismenu);
         }
     }
     public void Exit(bool p)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
@@ -10,13 +11,14 @@ public class Game_Manager : MonoBehaviour
     public GameObject[] items;          // массив всех предметов для поиска
     public static float time;           // время на поиски 2 минуты + 30сек на предмет
     public static int amount;           // количество предметов
-    public Vector3 []battery;           // все возможные местоположения батареек
+    public Vector3[] battery;           // все возможные местоположения батареек
+    public static int[] items_spawn;
         
     public void Awake()
     {
-        amount = Random.Range(1,items.Length+1);
+        amount = Random.Range(1,7);
         time = 120 + 30*amount;
-        int []items_spawn = new int [amount];
+        items_spawn = new int [amount];
         for(int i = 0; i<amount; i++) items_spawn[i] = -1;
 
         
@@ -53,7 +55,7 @@ public class Game_Manager : MonoBehaviour
             this.batt.transform.position = new Vector3(battery[kol_batt[i]].x, battery[kol_batt[i]].y, battery[kol_batt[i]].z);
             //Debug.Log(kol_batt[i]+"\\");
         }
-        Debug.Log(kol_batt.Length);
+        //Debug.Log(kol_batt.Length);
     }
     public void FixedUpdate()
     {
