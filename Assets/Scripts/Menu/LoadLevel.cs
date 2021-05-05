@@ -19,6 +19,5 @@ public class LoadLevel : MonoBehaviour
             slider.value = asyncLoad.progress;
             yield return null;
         }
-        yield return new WaitForSeconds(4.1f);
     }
 }
