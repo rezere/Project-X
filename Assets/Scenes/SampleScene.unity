@@ -1112,7 +1112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015533991, y: 0.5891068}
   m_AnchorMax: {x: 0.231, y: 0.68477005}
-  m_AnchoredPosition: {x: -1.9001465, y: -1.0299988}
+  m_AnchoredPosition: {x: -1.9003906, y: -1.0299988}
   m_SizeDelta: {x: -10.117676, y: -6.1407623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007343881
@@ -1762,7 +1762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015533991, y: 0.4108767}
   m_AnchorMax: {x: 0.231, y: 0.5}
-  m_AnchoredPosition: {x: -1.8999023, y: 1.641983}
+  m_AnchoredPosition: {x: -1.8999023, y: 1.6419678}
   m_SizeDelta: {x: -10.117676, y: -1.1407623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393128933
@@ -2455,7 +2455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Name
+  m_Text: Project X
 --- !u!222 &1532339554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7986,7 +7986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29868618, y: 0.22228333}
   m_AnchorMax: {x: 0.432, y: 0.70623004}
-  m_AnchoredPosition: {x: -0.49993896, y: 3.585205}
+  m_AnchoredPosition: {x: -0.5, y: 3.585205}
   m_SizeDelta: {x: -9.182251, y: -7.170471}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741411656

@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light_home:
-  - {fileID: 0}
+  - {fileID: 4857888352874945411}
   click: {fileID: 8300000, guid: 7e0fa341119f0784eafd133ceb98c596, type: 3}
   active: 0
 --- !u!65 &8525497459211507085

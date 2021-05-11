@@ -21,7 +21,7 @@ public class Game_Manager : MonoBehaviour
         items_spawn = new int [amount];
         for(int i = 0; i<amount; i++) items_spawn[i] = -1;
 
-        
+
         for(int i = 0; i<amount; i++)
         {
             metka:

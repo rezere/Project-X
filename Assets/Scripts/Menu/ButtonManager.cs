@@ -41,7 +41,7 @@ public class ButtonManager : MonoBehaviour
         au = button[0].GetComponent<AudioSource>();
         au.volume = MenuManager.volume/100f;
         au.PlayOneShot(click);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     // Настройки
     public void Settings()
