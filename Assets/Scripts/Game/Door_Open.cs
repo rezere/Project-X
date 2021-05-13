@@ -13,6 +13,8 @@ public class Door_Open : MonoBehaviour
 
 	private Transform target;
 
+	public  bool isKey = false;
+
 	void Awake () 
 	{
 		openAngle = Mathf.Abs(openAngle);
@@ -30,8 +32,11 @@ public class Door_Open : MonoBehaviour
 		}
 		else
 		{
-			Quaternion rotation = Quaternion.Euler(0, closeAngle, 0);
-			anchor.localRotation = Quaternion.Lerp(anchor.localRotation, rotation, smooth * Time.deltaTime);
+			if(isKey)
+			{
+				Quaternion rotation = Quaternion.Euler(0, closeAngle, 0);
+				anchor.localRotation = Quaternion.Lerp(anchor.localRotation, rotation, smooth * Time.deltaTime);
+			}
 		}
 
 		if(target)

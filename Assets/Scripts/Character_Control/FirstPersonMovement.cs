@@ -9,6 +9,8 @@ public class FirstPersonMovement : MonoBehaviour
     Vector2 velocity;
     public bool kiss = false;
     public static bool pause = false;
+
+    public static bool openDoor;
     [Header("Фонарик")]
     public  static float battery;
     public GameObject ligh;
@@ -23,9 +25,12 @@ public class FirstPersonMovement : MonoBehaviour
     public Sprite[] items_img;
     public GameObject menu_items;
     private bool ismenu;
+    private Rigidbody rb;
  
     private void Start()
     {
+        rb = this.GetComponent<Rigidbody>();
+        openDoor = false;
         ismenu = false;
         battery = 100f;
         ligt_on = false;
@@ -44,11 +49,8 @@ public class FirstPersonMovement : MonoBehaviour
         }
         Debug.Log(Game_Manager.items_spawn.Length);
     }
-
     public void Update()
     {
-
-
         if (Input.GetKeyUp(KeyCode.Escape) && !pause) // открытие меню паузы
         {
             pause = true;
@@ -97,62 +99,64 @@ public class FirstPersonMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
- 
         if (!pause)
         {
-            velocity.y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            velocity.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            transform.Translate(velocity.x, 0, velocity.y);
-            if (Input.GetKey(KeyCode.W))
+            if(!openDoor)
             {
-                anim.SetBool("walk", true);
-            }
-            else
-            {
-                anim.SetBool("walk", false);
-            }
-            if (Input.GetKey(KeyCode.L)) // пасхалка
-            {
-                kiss = true;
-                anim.SetBool("kiss", kiss);
-            }
-            if (!kiss)
-            {
-                anim.SetBool("kiss", kiss);
-            }
-            ///////////Фонарик
-            if(ligt_on && battery>0)
-            {
-                battery -=0.5f * Time.deltaTime;
-                if (battery <= 100 && battery >= 75)
+                velocity.y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+                velocity.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+                transform.Translate(velocity.x, 0, velocity.y);
+                if (Input.GetKey(KeyCode.W))
                 {
-                    img_battery.sprite = battery_pr[0];
-                    lantern.range = 45f;
-                    lantern.spotAngle = 60f;
+                    anim.SetBool("walk", true);
                 }
-                if(battery < 75 && battery>=50)
+                else
                 {
-                    img_battery.sprite = battery_pr[1];
-                    lantern.range = 35f;
-                    lantern.spotAngle = 50f;
+                    anim.SetBool("walk", false);
                 }
-                if (battery < 50 && battery >= 25)
+                if (Input.GetKey(KeyCode.L)) // пасхалка
                 {
-                    img_battery.sprite = battery_pr[2];
-                    lantern.range = 25f;
-                    lantern.spotAngle = 40f;
+                    kiss = true;
+                    anim.SetBool("kiss", kiss);
                 }
-                if (battery < 25 && battery >= 1)
+                if (!kiss)
                 {
-                    img_battery.sprite = battery_pr[3];
-                    lantern.range = 15f;
-                    lantern.spotAngle = 30f;
+                    anim.SetBool("kiss", kiss);
                 }
-                if (battery <=0)
+                ///////////Фонарик
+                if(ligt_on && battery>0)
                 {
-                    img_battery.sprite = battery_pr[4];
-                    ligh.SetActive(false);
-                    ligt_on = false;
+                    battery -=0.5f * Time.deltaTime;
+                    if (battery <= 100 && battery >= 75)
+                    {
+                        img_battery.sprite = battery_pr[0];
+                        lantern.range = 45f;
+                        lantern.spotAngle = 60f;
+                    }
+                    if(battery < 75 && battery>=50)
+                    {
+                        img_battery.sprite = battery_pr[1];
+                        lantern.range = 35f;
+                        lantern.spotAngle = 50f;
+                    }
+                    if (battery < 50 && battery >= 25)
+                    {
+                        img_battery.sprite = battery_pr[2];
+                        lantern.range = 25f;
+                        lantern.spotAngle = 40f;
+                    }
+                    if (battery < 25 && battery >= 1)
+                    {
+                        img_battery.sprite = battery_pr[3];
+                        lantern.range = 15f;
+                        lantern.spotAngle = 30f;
+                    }
+                    if (battery <=0)
+                    {
+                        img_battery.sprite = battery_pr[4];
+                        ligh.SetActive(false);
+                        ligt_on = false;
+                    }
                 }
             }
         }
