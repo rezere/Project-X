@@ -79,7 +79,7 @@ public void ButtonUp(int index)
     {
         case 0:
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
             break;
         }
         case 1:

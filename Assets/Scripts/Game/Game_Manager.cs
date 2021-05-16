@@ -16,7 +16,7 @@ public class Game_Manager : MonoBehaviour
         
     public void Awake()
     {
-        amount = Random.Range(1,7);
+        amount = Random.Range(1,items.Length+1);
         time = 120 + 30*amount;
         items_spawn = new int [amount];
         for(int i = 0; i<amount; i++) items_spawn[i] = -1;
