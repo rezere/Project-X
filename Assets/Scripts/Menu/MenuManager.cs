@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
 
     public static Save sv = new Save(); // экземпляр
 
-    private void Awake() //вызивается до старта 
+    private void Awake() //вызывается до старта 
     {
         if(PlayerPrefs.HasKey("SV"))
         {
@@ -56,6 +56,17 @@ public class MenuManager : MonoBehaviour
         Save_Sett();
     }
 
+    public  static void Start_Sett()
+    {
+        if(PlayerPrefs.HasKey("SV"))
+        {
+            sv = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("SV"));
+            volume = sv.vol;
+            volume_mus = sv.vol_mus;
+            lang = sv.language;
+            chart_pick = sv.chart;
+        }
+    }
     public  static void Save_Sett()
     {
         sv.vol = volume;

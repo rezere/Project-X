@@ -53,14 +53,12 @@ public class Game_Manager : MonoBehaviour
             kol_batt[i] = pos;
             Instantiate(batt);
             this.batt.transform.position = new Vector3(battery[kol_batt[i]].x, battery[kol_batt[i]].y, battery[kol_batt[i]].z);
-            //Debug.Log(kol_batt[i]+"\\");
         }
-        //Debug.Log(kol_batt.Length);
     }
     public void FixedUpdate()
     {
         bool endGame;
-        if(!FirstPersonMovement.pause || time>0)
+        if(!FirstPersonMovement.pause && time>0)
         time-= Time.deltaTime;
         if(time<=0)
         {

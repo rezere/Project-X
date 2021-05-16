@@ -109,17 +109,6 @@ public class ButtonManager : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public void Continue()
-    {
-        au = button[0].GetComponent<AudioSource>();
-        au.volume = MenuManager.volume / 100f;
-        au.PlayOneShot(click);
-        FirstPersonMovement.pause = false;
-        FirstPersonLook.TimerStop();
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-    
-
     public void Charters()
     {
         au = button[1].GetComponent<AudioSource>();
