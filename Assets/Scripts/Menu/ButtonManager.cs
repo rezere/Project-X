@@ -7,15 +7,20 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    [Header("Выбраный персонаж")]
+    public GameObject[] chart;
+    [Header("Спрайт языков")]
     public Sprite[] lan;
-    public GameObject[] sett;
+    [Header("Панель настроик и персонажей")]
+    public GameObject[] sett; 
     public GameObject[] button;
     private Image butt_language;
     private AudioSource au;
     public AudioClip click;
     private RectTransform panl;
     public int speed;
-    private bool panel,ch_panel; // открыты ли настройки
+    [Header("Открыта ль одна из панелей")]
+    private bool panel,ch_panel;
 
     public void Start()
     {
@@ -34,6 +39,17 @@ public class ButtonManager : MonoBehaviour
         {
             butt_language.sprite = lan[2];
         }
+
+        if(MenuManager.chart_pick == 0) 
+        {
+            chart[0].SetActive(true);
+            chart[1].SetActive(false);
+        } 
+        if(MenuManager.chart_pick == 1) 
+        {
+            chart[1].SetActive(true);
+            chart[0].SetActive(false);
+        } 
     }
     // Начало игры
     public void StartGame()
@@ -138,6 +154,16 @@ public class ButtonManager : MonoBehaviour
     }
     public void Charters_Select(int index)
     {
+        if(index == 0) 
+        {
+            chart[0].SetActive(true);
+            chart[1].SetActive(false);
+        } 
+        if(index == 1) 
+        {
+            chart[1].SetActive(true);
+            chart[0].SetActive(false);
+        } 
         MenuManager.chart_pick = index;
     }
 

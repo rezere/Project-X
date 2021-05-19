@@ -6,21 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
-    public GameObject []character;      
-    public GameObject batt;             // Префаб батарейки 
+    [Header("Персонаж")]
+    public GameObject[] character;   
+    [Header("Батарейки")]   
+    public GameObject batt;             // Префаб батарейки
+    public Vector3[] battery;           // все возможные местоположения батареек 
+    [Header("Предметы")]
     public GameObject[] items;          // массив всех предметов для поиска
     public static float time;           // время на поиски 2 минуты + 30сек на предмет
     public static int amount;           // количество предметов
-    public Vector3[] battery;           // все возможные местоположения батареек
     public static int[] items_spawn;
+    [Header("Небо (SkyBox)")]
+    public Material[] sk;
         
     public void Awake()
     {
+        RenderSettings.skybox = sk[Random.Range(0,sk.Length+1)];
         amount = Random.Range(1,items.Length+1);
         time = 120 + 30*amount;
         items_spawn = new int [amount];
-        for(int i = 0; i<amount; i++) items_spawn[i] = -1;
-
+        for(int i = 0; i<amount; i++)  items_spawn[i] = -1;
 
         for(int i = 0; i<amount; i++)
         {
@@ -37,9 +42,21 @@ public class Game_Manager : MonoBehaviour
 
     void Start()
     {
-        Instantiate(character[MenuManager.chart_pick]); // создание персонажа
-        character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f); // начальное место положение персонажа 
-        
+        if(SceneManager.GetActiveScene().name == "Level_1")
+        {
+
+            Instantiate(character[MenuManager.chart_pick]); // создание персонажа
+            if(MenuManager.chart_pick == 0)
+            character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f); // начальное место положение персонажа 
+            else if(MenuManager.chart_pick == 1) character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f);
+        }
+        if(SceneManager.GetActiveScene().name == "Level_1")
+        {
+            Instantiate(character[MenuManager.chart_pick]); // создание персонажа
+            if(MenuManager.chart_pick == 0)
+            character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f); // начальное место положение персонажа 
+            else if(MenuManager.chart_pick == 1) character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f);
+        }
         int[] kol_batt = new int[Random.Range(1, battery.Length)];
         int pos;
         for (int i = 0; i<kol_batt.Length; i++)
