@@ -13,7 +13,7 @@ public class Game_Manager : MonoBehaviour
     public Vector3[] battery;           // все возможные местоположения батареек 
     [Header("Предметы")]
     public GameObject[] items;          // массив всех предметов для поиска
-    public static float time;           // время на поиски 2 минуты + 30сек на предмет
+    [Range(100, 300)] public static float time;           // время на поиски 2 минуты + 30сек на предмет
     public static int amount;           // количество предметов
     public static int[] items_spawn;
     [Header("Небо (SkyBox)")]
@@ -44,13 +44,12 @@ public class Game_Manager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Level_1")
         {
-
-            Instantiate(character[MenuManager.chart_pick]); // создание персонажа
             if(MenuManager.chart_pick == 0)
-            character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f); // начальное место положение персонажа 
-            else if(MenuManager.chart_pick == 1) character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f);
+            Instantiate(character[MenuManager.chart_pick], new Vector3(0f, 0.67f, 0f), Quaternion.identity);
+            if(MenuManager.chart_pick == 1) 
+            Instantiate(character[MenuManager.chart_pick], new Vector3(25.48f, 4.61f, 7.89f), Quaternion.identity);
         }
-        if(SceneManager.GetActiveScene().name == "Level_1")
+        if(SceneManager.GetActiveScene().name == "Level_2") // указать места появления
         {
             Instantiate(character[MenuManager.chart_pick]); // создание персонажа
             if(MenuManager.chart_pick == 0)

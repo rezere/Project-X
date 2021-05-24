@@ -11,7 +11,7 @@ public class FirstPersonLook : MonoBehaviour
     public float smoothing = 2;
     public Text time_txt;
     public static DateTime timerEnd;
-    public float distance = 5;
+    [Range(10, 100)] public float distance;
     private Camera cam;
     public RaycastHit hit;
     public GameObject keyhole;
@@ -81,7 +81,7 @@ public class FirstPersonLook : MonoBehaviour
                     Game_Manager.ItemsUp();
                      hit.collider.gameObject.GetComponent<Items_Spawn>().DestroyItems();
 				}
-                 if(hit.collider.tag == "Door")
+                if(hit.collider.tag == "Door")
 				{
                     if(!hit.transform.GetComponent<Door_Open>().isKey)
                     {
@@ -98,6 +98,13 @@ public class FirstPersonLook : MonoBehaviour
 					    hit.transform.GetComponent<Door_Open>().Invert(transform);
                     }
 				}
+                if(hit.collider.tag == "TV")
+                {
+                    bool onTv =  hit.collider.gameObject.GetComponent<TV>().OnTv;
+                    hit.collider.gameObject.GetComponent<TV>().OnTv = !onTv;
+                    hit.collider.gameObject.GetComponent<TV>().WatchTV();
+                }
+
                 
 			}
             }

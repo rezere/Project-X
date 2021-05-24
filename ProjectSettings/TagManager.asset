@@ -8,6 +8,7 @@ TagManager:
   - light
   - Items
   - Door
+  - TV
   layers:
   - Default
   - TransparentFX

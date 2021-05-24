@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class FirstPersonMovement : MonoBehaviour
 {
-    public float speed = 5;
+    [Range(1, 10)] public float speed;
     public GameObject paus; // Меню паузы
     private Animator anim;
     Vector2 velocity;
