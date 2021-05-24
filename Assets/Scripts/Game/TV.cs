@@ -23,6 +23,7 @@ public class TV : MonoBehaviour
         {
             vp.enabled = true;
             vp.clip = video;
+            vp.isLooping = true;
         }
         if(!OnTv)
         {

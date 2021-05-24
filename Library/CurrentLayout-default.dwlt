@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 109
+  controlID: 59
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1065
     height: 731
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 110
+  controlID: 107
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1065
     height: 442
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 111
+  controlID: 108
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 336
     height: 442
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 471
     height: 731
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 21}
@@ -400,14 +400,14 @@ MonoBehaviour:
   m_Gizmos: 1
   m_SceneIsLit: 0
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9479923, y: 2.9740255, z: 12.501717}
+    m_Target: {x: 9.702143, y: 6.334488, z: -23.708008}
     speed: 2
-    m_Value: {x: 35.027527, y: 1.1122453, z: -1.3166002}
+    m_Value: {x: 9.702143, y: 6.334488, z: -23.708008}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -453,17 +453,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.09181636, y: -0.16943425, z: 0.015854562, w: 0.98113036}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0.0035161504, y: 0.99621695, z: -0.07185186, w: 0.048752278}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.7846384
+    m_Target: 68.721176
     speed: 2
-    m_Value: 1.9652227
+    m_Value: 68.721176
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.49748743
@@ -477,7 +477,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 0
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.0032133756, y: 0.99782705, z: -0.069385506, w: 0.02368157}
+  m_LastSceneViewRotation: {x: 0.0017168623, y: -0.76972103, z: -0.0020712141, w: -0.63838536}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -513,23 +513,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1014edff
-      m_LastClickedID: -1240048
-      m_ExpandedIDs: 2815edffa0c8edff9cd4edffd0e5edff5a62f8ff2acaf9ff8ecdf9ffa635faff1e08fbff8675fbff76dffbff08a9fcff12e2fdffb647feff5248fefff6bafeff6a26ffff5094ffffc8faffff06d906002cdd060084de0600
+      m_SelectedIDs: 1a920000
+      m_LastClickedID: 0
+      m_ExpandedIDs: ae43f3ffc4e5f3ff5e00f4ff9629f4ffc26df4ffd0fdf4ffb8fff4fffc41f5ff88a8f5fffa12f6ff1e6bfaffa6d3faff382afcff9293fcff285cfeffc05cfeffe45ffeff28c9feff1295ffffae95ffffc8faffff02380000de470000843e0300084d0300420d04001e1d040012450400ee54040022600400a66e0400fe6f0400c8700400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Samsung UHD 4K Smart TV RU7097 Series 7 (2)
-        m_OriginalName: Samsung UHD 4K Smart TV RU7097 Series 7 (2)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1193824
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -696,9 +696,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 6c880000
-    m_LastClickedID: 34924
-    m_ExpandedIDs: 000000006c8800006e88000070880000728800007488000076880000d4880000d688000000ca9a3b
+    m_SelectedIDs: da8b0000
+    m_LastClickedID: 35802
+    m_ExpandedIDs: 00000000da8b0000dc8b0000de8b0000e08b0000e28b0000e48b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -726,7 +726,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c8800006e88000070880000728800007488000076880000
+    m_ExpandedIDs: 00000000da8b0000dc8b0000de8b0000e08b0000e28b0000e48b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -805,7 +805,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 515.2
-    width: 1063
+    width: 1064
     height: 268
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &19
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 552314
+  m_LastSelectedObjectID: 288414
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

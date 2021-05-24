@@ -13,7 +13,7 @@ public class FirstPersonLook : MonoBehaviour
     public static DateTime timerEnd;
     [Range(10, 100)] public float distance;
     private Camera cam;
-    public RaycastHit hit;
+    //public RaycastHit hit;
     public GameObject keyhole;
     public Transform camer;
 
@@ -67,48 +67,45 @@ public class FirstPersonLook : MonoBehaviour
             {
                 
                 Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-                if (Physics.Raycast(ray, out hit, distance))
-			{
-				if(hit.collider.tag == "light")
+                RaycastHit[] hits = Physics.RaycastAll(ray, distance);
+                for(int i = 0; i < hits.Length; ++i)
+                {
+				if(hits[i].collider.gameObject.tag == "light")
 				{
-                    bool act =  hit.collider.gameObject.GetComponent<Light_House>().active;
-                    hit.collider.gameObject.GetComponent<Light_House>().active = !act;
-                    hit.collider.gameObject.GetComponent<Light_House>().LightOff();
+                    bool act =  hits[i].collider.gameObject.GetComponent<Light_House>().active;
+                    hits[i].collider.gameObject.GetComponent<Light_House>().active = !act;
+                    hits[i].collider.gameObject.GetComponent<Light_House>().LightOff();
 				}
 
-                if(hit.collider.tag == "Items")
+                if(hits[i].collider.gameObject.tag == "Items")
 				{
                     Game_Manager.ItemsUp();
-                     hit.collider.gameObject.GetComponent<Items_Spawn>().DestroyItems();
+                    hits[i].collider.gameObject.GetComponent<Items_Spawn>().DestroyItems();
 				}
-                if(hit.collider.tag == "Door")
+                if(hits[i].collider.gameObject.tag == "Door")
 				{
-                    if(!hit.transform.GetComponent<Door_Open>().isKey)
+                    if(!hits[i].transform.GetComponent<Door_Open>().isKey)
                     {
                         FirstPersonMovement.openDoor = true;
                         keyhole.SetActive(true);
                         //hit.transform.GetComponent<Door_Open>().isKey = true;
                         keyhole.GetComponent<Lockpicking>().enabled = true;
-                        Lockpicking.ht = hit;
-                        Debug.Log("EZ");
+                        Lockpicking.ht = hits[i];
                     }
-                    else if(hit.transform.GetComponent<Door_Open>().isKey)
+                    else if(hits[i].transform.GetComponent<Door_Open>().isKey)
                     {
-                        hit.transform.GetComponent<Door_Open>().enabled = true;
-					    hit.transform.GetComponent<Door_Open>().Invert(transform);
+                        hits[i].transform.GetComponent<Door_Open>().enabled = true;
+					    hits[i].transform.GetComponent<Door_Open>().Invert(transform);
                     }
 				}
-                if(hit.collider.tag == "TV")
+                if(hits[i].collider.gameObject.tag == "TV")
                 {
-                    bool onTv =  hit.collider.gameObject.GetComponent<TV>().OnTv;
-                    hit.collider.gameObject.GetComponent<TV>().OnTv = !onTv;
-                    hit.collider.gameObject.GetComponent<TV>().WatchTV();
+                    bool onTv =  hits[i].collider.gameObject.GetComponent<TV>().OnTv;
+                    hits[i].collider.gameObject.GetComponent<TV>().OnTv = !onTv;
+                    hits[i].collider.gameObject.GetComponent<TV>().WatchTV();
                 }
-
-                
-			}
             }
-
+            }
         }
     }
 }

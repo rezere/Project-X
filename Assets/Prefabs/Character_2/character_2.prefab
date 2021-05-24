@@ -1547,10 +1547,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3981204
+  m_Radius: 0.25635576
   m_Height: 1.8932958
   m_Direction: 1
-  m_Center: {x: 0, y: 0.93036103, z: 0.07074165}
+  m_Center: {x: 0, y: 0.93036103, z: 0.01721239}
 --- !u!114 &2041229223348811999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,11 +2831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: camer
       value: 
-      objectReference: {fileID: 4990486830749199736}
+      objectReference: {fileID: 0}
     - target: {fileID: 9119500665719403107, guid: c7907c71c4cf341478e100369883891a,
         type: 3}
       propertyPath: distance
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7907c71c4cf341478e100369883891a, type: 3}
