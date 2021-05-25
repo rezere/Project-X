@@ -1,9 +1,10 @@
-//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -21,7 +22,17 @@ public class ButtonManager : MonoBehaviour
     public int speed;
     [Header("Открыта ль одна из панелей")]
     private bool panel,ch_panel;
-
+    [Header("Ссылки для перехода в соц.сети")]
+    public string[] URL;
+    [Header("Кнопки соц.сетей")]
+    public GameObject[] social;
+    
+    private bool internetOn;
+    [System.Obsolete]
+    void Awake()
+    {
+        StartCoroutine(GetText());
+    }
     public void Start()
     {
         panel = false;
@@ -50,6 +61,8 @@ public class ButtonManager : MonoBehaviour
             chart[1].SetActive(true);
             chart[0].SetActive(false);
         } 
+        
+        Debug.Log(internetOn);
     }
     // Начало игры
     public void StartGame()
@@ -174,5 +187,38 @@ public class ButtonManager : MonoBehaviour
         au.PlayOneShot(click);
         SceneManager.LoadScene(0);
     }
-}
 
+    [System.Obsolete]
+    public void GoInsta()
+    {
+        if(internetOn)
+        {
+            Application.OpenURL(URL[0]);
+        }
+    }
+
+    [System.Obsolete]
+    public void GoTT()
+    {
+        if(internetOn)
+        {
+            Application.OpenURL(URL[1]);
+        }
+    }
+    [System.Obsolete]
+     IEnumerator GetText() 
+     {
+        UnityWebRequest www = UnityWebRequest.Get("https://www.google.com");
+        yield return www.Send();
+ 
+        if(www.isError) 
+        {
+            internetOn = false;
+        }
+        else {
+            // Show results as text
+            internetOn = true;
+        }
+        for(int i = 0;i<social.Length;i++) social[i].SetActive(internetOn);
+    }
+}
