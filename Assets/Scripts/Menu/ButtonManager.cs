@@ -26,12 +26,13 @@ public class ButtonManager : MonoBehaviour
     public string[] URL;
     [Header("Кнопки соц.сетей")]
     public GameObject[] social;
-    
+    private float waitTime = 10f;
+    private float timer; 
     private bool internetOn;
     [System.Obsolete]
     void Awake()
     {
-        StartCoroutine(GetText());
+        StartCoroutine(GetInternet());
     }
     public void Start()
     {
@@ -206,7 +207,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
     [System.Obsolete]
-     IEnumerator GetText() 
+     IEnumerator GetInternet() 
      {
         UnityWebRequest www = UnityWebRequest.Get("https://www.google.com");
         yield return www.Send();
@@ -215,10 +216,31 @@ public class ButtonManager : MonoBehaviour
         {
             internetOn = false;
         }
-        else {
-            // Show results as text
+        else 
+        {
             internetOn = true;
         }
         for(int i = 0;i<social.Length;i++) social[i].SetActive(internetOn);
+        timer = 0f;
+    }
+
+    [System.Obsolete]
+    public void Update()
+    {
+        timer += Time.deltaTime;
+        //Debug.Log(timer);
+        if (timer > waitTime) 
+        { 
+            if (Application.internetReachability == NetworkReachability.NotReachable) 
+            {
+                internetOn = false;
+            } 
+            else 
+            {
+               internetOn = true;
+            }
+            for(int i = 0;i<social.Length;i++) social[i].SetActive(internetOn);
+            timer = 0f;
+        }
     }
 }

@@ -24,6 +24,7 @@ public class TV : MonoBehaviour
             vp.enabled = true;
             vp.clip = video;
             vp.isLooping = true;
+            vp.SetDirectAudioVolume(0, MenuManager.volume/100f);// МУЗЫКА ИЛЬ ЗВУКИ????
         }
         if(!OnTv)
         {
