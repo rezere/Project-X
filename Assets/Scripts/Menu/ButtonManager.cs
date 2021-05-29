@@ -16,6 +16,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject[] sett; 
     public GameObject[] button;
     private Image butt_language;
+    [Header("Воспроизведение звуков и музыки")]
     private AudioSource au;
     public AudioClip click;
     private RectTransform panl;
@@ -26,12 +27,17 @@ public class ButtonManager : MonoBehaviour
     public string[] URL;
     [Header("Кнопки соц.сетей")]
     public GameObject[] social;
+    [Header("Таймер для проверки подключения к интернету")]
     private float waitTime = 10f;
     private float timer; 
     private bool internetOn;
+    
     [System.Obsolete]
     void Awake()
     {
+        #if UNITY_EDITOR
+        Application.targetFrameRate = 60;
+        #endif
         StartCoroutine(GetInternet());
     }
     public void Start()
@@ -126,7 +132,7 @@ public class ButtonManager : MonoBehaviour
             panl.offsetMax = new Vector2(panl.offsetMax.x, 1200);
         }
     }
-    // Выход
+    
     public void Exit()
     {
         MenuManager.Save_Sett();
@@ -147,6 +153,7 @@ public class ButtonManager : MonoBehaviour
         panl = sett[1].GetComponent<RectTransform>();
         ch_panel = true;
     }
+
     public void Language()
     {
         Debug.Log(MenuManager.lang);

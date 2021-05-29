@@ -95,6 +95,7 @@ public class FirstPersonLook : MonoBehaviour
                     else if(hits[i].transform.GetComponent<Door_Open>().isKey)
                     {
                         hits[i].transform.GetComponent<Door_Open>().enabled = true;
+                        hits[i].transform.GetComponent<Door_Open>().AudioPlay();
 					    hits[i].transform.GetComponent<Door_Open>().Invert(transform);
                     }
 				}

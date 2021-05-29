@@ -14,7 +14,6 @@ public GameObject partickle;
 public Text text; 
 void Start()
 {
-    iswin = true;
     pr = partickle.GetComponent<ParticleSystem>(); 
     pr.Play();
     if(iswin)

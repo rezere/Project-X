@@ -6,7 +6,7 @@ using UnityEngine.Video;
 public class TV : MonoBehaviour
 {
     public bool OnTv;
-    public VideoClip video;
+    public VideoClip[] video;
     private VideoPlayer vp;
     public GameObject screen;
     // Start is called before the first frame update
@@ -22,9 +22,9 @@ public class TV : MonoBehaviour
         if(OnTv)
         {
             vp.enabled = true;
-            vp.clip = video;
+            vp.clip = video[Random.Range(0,video.Length)];
             vp.isLooping = true;
-            vp.SetDirectAudioVolume(0, MenuManager.volume/100f);// МУЗЫКА ИЛЬ ЗВУКИ????
+            vp.SetDirectAudioVolume(0, MenuManager.volume/100f);
         }
         if(!OnTv)
         {

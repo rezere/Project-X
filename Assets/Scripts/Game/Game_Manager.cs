@@ -10,10 +10,11 @@ public class Game_Manager : MonoBehaviour
     public GameObject[] character;   
     [Header("Батарейки")]   
     public GameObject batt;             // Префаб батарейки
-    public Vector3[] battery;           // все возможные местоположения батареек 
+    public Vector3[] battery;
+    public Vector3[] battery_lock2;
     [Header("Предметы")]
     public GameObject[] items;          // массив всех предметов для поиска
-    [Range(100, 300)] public static float time;           // время на поиски 2 минуты + 30сек на предмет
+    public static float time;           // время на поиски 2 минуты + 30сек на предмет
     public static int amount;           // количество предметов
     public static int[] items_spawn;
     [Header("Небо (SkyBox)")]
@@ -23,7 +24,7 @@ public class Game_Manager : MonoBehaviour
     {
         RenderSettings.skybox = sk[Random.Range(0,sk.Length+1)];
         amount = Random.Range(1,items.Length+1);
-        time = 120 + 30*amount;
+        time = 360 + 60*amount;
         items_spawn = new int [amount];
         for(int i = 0; i<amount; i++)  items_spawn[i] = -1;
 
@@ -68,7 +69,10 @@ public class Game_Manager : MonoBehaviour
             }
             kol_batt[i] = pos;
             Instantiate(batt);
+            if(SceneManager.GetActiveScene().name == "Level_1")
             this.batt.transform.position = new Vector3(battery[kol_batt[i]].x, battery[kol_batt[i]].y, battery[kol_batt[i]].z);
+            if(SceneManager.GetActiveScene().name == "Level_2") 
+            this.batt.transform.position = new Vector3(battery_lock2[kol_batt[i]].x, battery_lock2[kol_batt[i]].y, battery_lock2[kol_batt[i]].z);
         }
     }
     public void FixedUpdate()

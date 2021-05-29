@@ -10,6 +10,8 @@ public class Door_Open : MonoBehaviour
 	public float openAngle = 120;
 	public float closeAngle = 0;
 	public float smooth = 2;
+	private AudioSource au;
+    public AudioClip open;
 
 	private Transform target;
 
@@ -46,6 +48,12 @@ public class Door_Open : MonoBehaviour
 		}
 	}
 
+	public void AudioPlay()
+	{
+		au = this.GetComponent<AudioSource>();
+        au.volume = MenuManager.volume/100f;
+        au.PlayOneShot(open);
+	}
 	public void Invert(Transform player)
 	{
 		target = player;

@@ -182,6 +182,7 @@ public class Lockpicking : MonoBehaviour
 			FirstPersonMovement.openDoor = false;
 			this.gameObject.SetActive(false);
 			ht.transform.GetComponent<Door_Open>().enabled = true;
+			ht.transform.GetComponent<Door_Open>().AudioPlay();
 			ht.transform.GetComponent<Door_Open>().Invert(transform);
 			ht.transform.GetComponent<Door_Open>().isKey = true;
 			enabled = false;

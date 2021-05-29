@@ -4,9 +4,10 @@ using UnityEngine.UI;
 public class FirstPersonMovement : MonoBehaviour
 {
     [Range(1, 10)] public float speed;
-    public GameObject paus; // Меню паузы
-    private Animator anim;
     Vector2 velocity;
+    public GameObject paus; // Меню паузы
+    [Header("Робота з анімаціями")]
+    private Animator anim;
     public bool kiss = false;
     public static bool pause = false;
 
