@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,7 @@ public class Game_Manager : MonoBehaviour
     public Vector3[] battery_lock2;
     [Header("Предметы")]
     public GameObject[] items;          // массив всех предметов для поиска
-    public static float time;           // время на поиски 2 минуты + 30сек на предмет
+    public static float time;           // время на поиски 360с + 60с * кол.предметов
     public static int amount;           // количество предметов
     public static int[] items_spawn;
     [Header("Небо (SkyBox)")]
@@ -22,12 +22,11 @@ public class Game_Manager : MonoBehaviour
         
     public void Awake()
     {
-        RenderSettings.skybox = sk[Random.Range(0,sk.Length+1)];
+        RenderSettings.skybox = sk[Random.Range(0,sk.Length)];
         amount = Random.Range(1,items.Length+1);
         time = 360 + 60*amount;
         items_spawn = new int [amount];
         for(int i = 0; i<amount; i++)  items_spawn[i] = -1;
-
         for(int i = 0; i<amount; i++)
         {
             metka:
@@ -47,14 +46,14 @@ public class Game_Manager : MonoBehaviour
         {
             if(MenuManager.chart_pick == 0)
             Instantiate(character[MenuManager.chart_pick], new Vector3(0f, 0.67f, 0f), Quaternion.identity);
-            if(MenuManager.chart_pick == 1) 
+            else if(MenuManager.chart_pick == 1) 
             Instantiate(character[MenuManager.chart_pick], new Vector3(25.48f, 4.61f, 7.89f), Quaternion.identity);
         }
-        if(SceneManager.GetActiveScene().name == "Level_2") // указать места появления
+        else if(SceneManager.GetActiveScene().name == "Level_2") // указать места появления
         {
             Instantiate(character[MenuManager.chart_pick]); // создание персонажа
             if(MenuManager.chart_pick == 0)
-            character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f); // начальное место положение персонажа 
+            character[MenuManager.chart_pick].transform.position = new Vector3(35.89f, 6.158f, -44.12f); // начальное место положение персонажа 
             else if(MenuManager.chart_pick == 1) character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f);
         }
         int[] kol_batt = new int[Random.Range(1, battery.Length)];
