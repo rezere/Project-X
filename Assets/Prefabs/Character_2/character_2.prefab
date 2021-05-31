@@ -1585,6 +1585,7 @@ MonoBehaviour:
   items_img:
   - {fileID: 21300000, guid: 548140610bb42244dac55f815df6a5c8, type: 3}
   - {fileID: 21300000, guid: f829c1a9209f5e243ab3491536560425, type: 3}
+  - {fileID: 21300000, guid: 9054cc2a4b11cc84ba9a823dbd3a57da, type: 3}
   menu_items: {fileID: 3852499408877989347}
 --- !u!95 &6386252171052418783
 Animator:

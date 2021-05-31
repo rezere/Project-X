@@ -56,7 +56,7 @@ public class Game_Manager : MonoBehaviour
             character[MenuManager.chart_pick].transform.position = new Vector3(35.89f, 6.158f, -44.12f); // начальное место положение персонажа 
             else if(MenuManager.chart_pick == 1) character[MenuManager.chart_pick].transform.position = new Vector3(0f, 0.67f, 0f);
         }
-        int[] kol_batt = new int[Random.Range(1, battery.Length)];
+        int[] kol_batt = new int[Random.Range(1, 5)];
         int pos;
         for (int i = 0; i<kol_batt.Length; i++)
         {
