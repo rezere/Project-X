@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Level_2.unity
-=======
 - path: Assets/Scenes/Level_1.unity
->>>>>>> parent of 6ded8db1 (v 0.19)
   isLoaded: 1
   isActive: 1
   isSubScene: 0
